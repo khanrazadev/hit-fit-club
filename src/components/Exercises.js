@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import { Box, Stack, Typography } from "@mui/material";
 import ExerciseCard from "./ExerciseCard";
+import Loader from "./Loader";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 
@@ -53,14 +54,26 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         flexWrap="wrap"
         justifyContent="center"
       >
-        {currentExercises.map((exercise, index) => (
-          <ExerciseCard key={index} exercise={exercise} />
-        ))}
+        {currentExercises.length ? (
+          <>
+            {currentExercises.map((exercise, index) => (
+              <ExerciseCard key={index} exercise={exercise} />
+            ))}
+          </>
+        ) : (
+          <Loader />
+        )}
       </Stack>
       <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
         {exercises.length > 9 && (
           <Pagination
-            color="standard"
+            className="pagination"
+            style={{
+              backgroundColor: "crimson",
+              borderRadius: "10px",
+              padding: "10px",
+              mixBlendMode: "hard-light",
+            }}
             shape="rounded"
             defaultPage={1}
             count={Math.ceil(exercises.length / exercisesPerPage)}
