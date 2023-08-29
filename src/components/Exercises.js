@@ -72,6 +72,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
               backgroundColor: "crimson",
               borderRadius: "10px",
               padding: "10px",
+              fontSize: "1px",
               mixBlendMode: "hard-light",
             }}
             shape="rounded"
@@ -79,7 +80,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
             count={Math.ceil(exercises.length / exercisesPerPage)}
             page={currentPage}
             onChange={paginate}
-            size="large"
+            size="small"
           />
         )}
       </Stack>
