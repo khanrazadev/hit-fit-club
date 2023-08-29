@@ -1,13 +1,12 @@
 body {
-  font-family: 'Josefin Sans';
-  background-color: #FFFAFB;
+  font-family: "Josefin Sans";
+  background-color: rgb(0, 0, 0);
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FF2625;
+  color: #ff2625;
   font-size: 25px;
   border-radius: 4px;
   position: absolute;
@@ -51,31 +50,39 @@ body {
 .detail-image {
   width: 729px;
   height: 742px;
+  mix-blend-mode: difference;
 }
 
 .hero-banner-img {
   position: absolute;
-  right: 40px;
-  top: 0px;
-  width: 700px;
-  height: 900px;
+  right: 80px;
+  top: 20px;
+  width: 500px;
+  padding: 20px;
+  box-shadow: rgba(228, 5, 5, 0.4) 0px 2px 4px,
+    rgba(225, 7, 7, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-bottom-right-radius: 10%;
+  height: 700px;
   margin-top: -330px;
-
 }
 
 .exercise-card {
-  width: 400px;
-  height: 445px;
-  background: #fff;
-  border-top: 4px solid #FF2625;
-  border-bottom-left-radius: 20px;
+  width: 350px;
+  height: 400px;
+  border: 1px solid crimson;
+  background-color: #ffffff;
+  box-shadow: rgba(240, 46, 46, 0.4) 0px 5px, rgba(240, 46, 46, 0.3) 0px 10px,
+    rgba(240, 46, 46, 0.2) 0px 15px, rgba(240, 46, 46, 0.1) 0px 20px,
+    rgba(240, 46, 46, 0.05) 0px 25px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 10px;
-  transform: scale(1, 1);
-  transition: 0.3s all ease-in-out;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.exercise-image {
+  mix-blend-mode: difference !important;
 }
 
 .exercise-card img {
@@ -87,14 +94,10 @@ body {
   transition: 0.3s all ease-in-out;
 }
 
-.exercise-card:hover,
-.bodyPart-card:hover {
-  transform: scale(1.1, 1.1);
-}
-
 .search-btn:hover {
-  color: #FF2625 !important;
-  border: 1px solid #FF2625 !important;
+  color: black !important;
+  background-color: rgba(220, 20, 60, 0.77) !important;
+  border: 1px solid crimson !important;
 }
 
 .exercise-video {
@@ -106,12 +109,11 @@ body {
   text-decoration: none;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
     height: 300px;
   }
-
 
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
@@ -134,11 +136,26 @@ body {
     width: 320px;
     height: 300px;
   }
-
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .exercise-card {
     width: 280px;
   }
+}
+
+.footer {
+  border: 1px solid crimson;
+  border-radius: 5px;
+  box-shadow: rgba(240, 237, 46, 0.4) 0px 5px, rgba(237, 240, 46, 0.3) 0px 10px,
+    rgba(217, 240, 46, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(233, 240, 46, 0.05) 0px 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.body-part-image {
+  mix-blend-mode: color-dodge;
 }

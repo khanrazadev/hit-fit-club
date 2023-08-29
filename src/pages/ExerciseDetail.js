@@ -38,7 +38,7 @@ const ExerciseDetail = () => {
 
 
   return (
-  <Box>
+  <Box fontFamily={"monospace"}>
     <Detail exerciseDetail={exerciseDetail}/>
     <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name}/>
     <SimilarExercises targetMuscleExercises={targetMuscleExercises}/>

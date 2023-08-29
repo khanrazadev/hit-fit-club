@@ -1,14 +1,14 @@
 import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-
-    if(!exerciseVideos.length) return 'Loading...'
+  if (!exerciseVideos.length) return "Loading...";
   return (
     <Box sx={{ marginTop: { lg: "203px", xs: "20px" } }} p="20px">
       <Typography
         sx={{ fontSize: { lg: "44px", xs: "25px" } }}
         fontWeight={700}
-        color="#000"
+        fontFamily={"monospace"}
+        color="gray"
         mb="33px"
       >
         Watch{" "}
@@ -23,7 +23,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         flexWrap="wrap"
         alignItems="center"
       >
-        {exerciseVideos?.slice(0,3).map((item, index) => (
+        {exerciseVideos?.slice(0, 3).map((item, index) => (
           <a
             key={index}
             className="exercise-video"
@@ -36,11 +36,16 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
               src={item.video.thumbnails[0].url}
               alt={item.video.title}
             />
-              <Box>
-              <Typography sx={{ fontSize: { lg: '28px', xs: '18px' } }} fontWeight={600} color="#000">
+            <Box>
+              <Typography
+                fontFamily={"monospace"}
+                sx={{ fontSize: { lg: "28px", xs: "18px" } }}
+                fontWeight={600}
+                color="gray"
+              >
                 {item.video.title}
               </Typography>
-              <Typography fontSize="14px" color="#000">
+              <Typography fontFamily={"monospace"} fontSize="20px" color="gray">
                 {item.video.channelName}
               </Typography>
             </Box>

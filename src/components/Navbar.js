@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
-
-import Logo from "../assets/images/Logo.gif";
+import { Link } from "react-router-dom";
 
 const Navbar = () => (
   <Stack
+    style={{
+      padding: "10px",
+    }}
     direction="row"
     justifyContent="space-around"
     sx={{
@@ -15,31 +16,21 @@ const Navbar = () => (
     }}
     px="20px"
   >
-    <Link to="/">
-      <img
-        src={Logo}
-        alt="logo"
-        style={{ width: "48px", height: "48px", margin: "0px 20px" }}
-      />
-    </Link>
-    <Stack
-      direction="row"
-      gap="40px"
-      fontFamily="Alegreya"
-      fontSize="24px"
-      alignItems="flex-end"
-    >
+    <a href="/" style={{ textDecoration: "none", color: "gray" }}>
+      <h1>HITFIT</h1>
+    </a>
+    <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
       <Link
         to="/"
         style={{
           textDecoration: "none",
-          color: "#3A1212",
-          borderBottom: "3px solid #FF2625",
+          color: "gray",
+          borderBottom: "3px solid crimson",
         }}
       >
         Home
       </Link>
-      <a href="#exercises" style={{ textDecoration: "none", color: "#3A1212" }}>
+      <a href="#exercises" style={{ textDecoration: "none", color: "gray" }}>
         Exercises
       </a>
     </Stack>

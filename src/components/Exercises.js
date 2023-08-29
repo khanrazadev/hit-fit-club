@@ -9,8 +9,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
 
- 
-
   //pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
@@ -24,29 +22,32 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-  useEffect(()=>{
-    const fetchEXercisesData = async ()=>{
+  useEffect(() => {
+    const fetchEXercisesData = async () => {
       let exercisesData = [];
-      exercisesData = await fetchData("https://exercisedb.p.rapidapi.com/exercises",exerciseOptions)
+      exercisesData = await fetchData(
+        "https://exercisedb.p.rapidapi.com/exercises",
+        exerciseOptions
+      );
       setExercises(exercisesData);
-    }
+    };
     fetchEXercisesData();
-
-  },[bodyPart])
+  }, [bodyPart]);
 
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography
         variant="h3"
         fontWeight="bold"
+        fontFamily={"monospace"}
+        color={"gray"}
         sx={{ fontSize: { lg: "44px", xs: "30px" } }}
         mb="46px"
       >
         Showing Results
       </Typography>
-    
-      <Stack
 
+      <Stack
         direction="row"
         sx={{ gap: { lg: "110px", xs: "50px" } }}
         flexWrap="wrap"
@@ -55,7 +56,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         {currentExercises.map((exercise, index) => (
           <ExerciseCard key={index} exercise={exercise} />
         ))}
-
       </Stack>
       <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
         {exercises.length > 9 && (
