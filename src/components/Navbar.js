@@ -16,7 +16,7 @@ const Navbar = () => (
     }}
     px="20px"
   >
-    <a href="/" style={{ textDecoration: "none", color: "gray" }}>
+    <a href="/"  className="logo" style={{ textDecoration: "none", color: "crimson" }}>
       <h1>HITFIT</h1>
     </a>
     <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
